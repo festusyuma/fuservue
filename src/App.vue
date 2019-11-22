@@ -1,13 +1,13 @@
 <template>
     <div id="app">
         <App-Form :action="formData.action" :fields="formData.fields" :submit-text="formData.submitText" @user="updateUsers" ></App-Form>
-<!--        <App-Users :users="users" ></App-Users>-->
+        <App-Users :users="users" ></App-Users>
     </div>
 </template>
 
 <script>
     import Form from './components/Form.vue'
-    //import Users from './components/Users.vue'
+    import Users from './components/Users.vue'
 
     export default {
         name: 'app',
@@ -34,7 +34,7 @@
 
         components: {
             'App-Form': Form,
-            //'App-Users': Users,
+            'App-Users': Users,
         }
     }
 </script>

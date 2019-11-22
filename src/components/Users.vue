@@ -37,4 +37,7 @@
     .table tr {
         border-bottom: 1px solid #000000;
     }
+    tr th {
+        text-align: left;
+    }
 </style>
