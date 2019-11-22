@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-        <App-Form :action="formData.action" :fields="formData.fields" :submit-text="formData.submitText" @user="updateUsers" ></App-Form>
-        <App-Users :users="users" ></App-Users>
+        <App-Form :action="formData.action" :fields="formData.fields" :submit-text="formData.submitText" ></App-Form>
+        <App-Users :users="this.$store.state.users" ></App-Users>
     </div>
 </template>
 
@@ -24,12 +24,6 @@
                 },
                 users: [],
             }
-        },
-        methods: {
-            updateUsers: function (user) {
-                this.users.push(user);
-                window.console.log(this.users);
-            },
         },
 
         components: {

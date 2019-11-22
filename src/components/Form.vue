@@ -16,6 +16,7 @@
     </form>
 </template>
 
+
 <script>
     export default {
         name: 'Form',
@@ -25,19 +26,18 @@
             submitText: String,
         },
         computed: {
-            user: function () {
-
+            user() {
                 let user = {};
                 this.fields.forEach((item) => {
                     user[item.name] = item.value;
                 });
 
                 return user;
-            }
+            },
         },
         methods: {
             showUser: function () {
-                this.$emit('user', this.user);
+                this.$store.commit('addUser', this.user);
             },
         }
     }
