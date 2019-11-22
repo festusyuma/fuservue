@@ -24,29 +24,20 @@
             fields: Array,
             submitText: String,
         },
-        data(){
-            return {
-                user: {}
+        computed: {
+            user: function () {
 
+                let user = {};
+                this.fields.forEach((item) => {
+                    user[item.name] = item.value;
+                });
+
+                return user;
             }
-        },
-        watch: {
-
         },
         methods: {
             showUser: function () {
-                let user = {};
-                for(let a in this.$refs) {
-                    user[a] = this.$refs[a][0].value;
-                }
-
-                this.user = user;
-
-                window.console.log(this.user);
-                // this.fields.forEach(function () {
-                //
-                // });
-                //window.console.log(this.$refs.username[0].value);
+                this.$emit('user', this.user);
             },
         }
     }
